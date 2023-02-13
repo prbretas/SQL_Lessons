@@ -279,3 +279,29 @@ INNER JOIN
 	idade as C
 ON
 	A.cpf = C.cpf;
+
+
+
+
+	--CRIANDO UMA VIEW
+	CREATE VIEW info_clientes AS
+	SELECT
+	A.cpf,
+	A.nome,
+	B.saldo,
+	C.idade
+FROM
+	clientes as A
+INNER JOIN
+	saldo as B
+ON
+	A.cpf = B.cpf
+INNER JOIN
+	idade as C
+ON
+	A.cpf = C.cpf;
+
+
+		--CHAMANDO UMA VIEW
+	SELECT * FROM info_clientes;
+
