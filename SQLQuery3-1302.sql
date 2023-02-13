@@ -261,7 +261,7 @@ ON
 	WHERE
 		A.cpf is NULL or B.cpf is NULL;
 
-
+		
 
 		-- INNER - Juntar as informações da tabela clientes, saldo e idade
 SELECT
