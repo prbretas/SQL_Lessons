@@ -130,7 +130,7 @@ FROM
 	idade_b;
 	
 	--------------------------------------------------------------
-			-- Criando a tabela clientes
+			-- Criando a tabela clientes 
 		create table clientes(
 			cpf char(11),
 			nome varchar(10),
@@ -144,7 +144,7 @@ FROM
 		('95448038662','Igor'),('79845532209','Matheus'),('73145743244','Noah');
 		
 		
-		-- Criando a tabela de saldo
+		-- Criando a tabela de saldo ------------------------------------------------------
 		create table saldo(
 			cpf char(11),
 			saldo real,
@@ -154,7 +154,7 @@ FROM
 		insert into saldo
 		values ('17060231030',100),('44192841886',200),('88567582458',300),('79845532209',400),('11654518590',500);
 		
-		-- Criar a tabela idade
+		-- Criar a tabela idade ------------------------------------------------------
 		create table idade(
 		cpf char(11),
 		idade int,
@@ -178,7 +178,7 @@ FROM
 	ON
 		A.cpf = B.cpf;
 
-	   -- LEFT JOIN
+	   -- LEFT JOIN  ------------------------------------------------------
 	SELECT
 		A.cpf,
 		A.nome,
@@ -191,7 +191,7 @@ FROM
 		A.cpf = B.cpf;
 
 
-	-- RIGHT JOIN
+	-- RIGHT JOIN  -------------------------------------------------------
 	SELECT
 		A.cpf,
 		A.nome,
@@ -203,4 +203,60 @@ FROM
 	ON
 		A.cpf = B.cpf;
 
+			   -- LEFT EXCLUDING JOIN ------------------------------------------------------
+	SELECT
+		A.cpf,
+		A.nome,
+		B.saldo
+	FROM
+		clientes as A
+	LEFT JOIN
+		saldo as B
+	ON
+		A.cpf = B.cpf
 
+		WHERE  B.cpf is NULL;
+
+
+			-- RIGHT EXCLUDING JOIN ------------------------------------------------------
+	SELECT
+		A.cpf,
+		A.nome,
+		B.saldo
+	FROM
+		clientes as A
+	RIGHT JOIN
+		saldo as B
+	ON
+		A.cpf = B.cpf
+	WHERE A.cpf is NULL;
+
+
+-- FULL OUTER JOIN
+SELECT
+	A.cpf,
+	A.nome,
+	B.saldo
+FROM
+	clientes as A
+FULL OUTER JOIN
+	saldo as B
+ON
+	A.cpf = B.cpf;
+
+
+
+	-- FULL EXCLUDING OUTER JOIN --------------------------------------------
+
+	SELECT
+		A.cpf,
+		A.nome,
+		B.saldo
+	FROM
+		clientes as A
+	FULL OUTER JOIN
+		saldo as B
+	ON
+		A.cpf = B.cpf
+	WHERE
+		A.cpf is NULL or B.cpf is NULL;
