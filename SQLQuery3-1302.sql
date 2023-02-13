@@ -260,3 +260,22 @@ ON
 		A.cpf = B.cpf
 	WHERE
 		A.cpf is NULL or B.cpf is NULL;
+
+
+
+		-- INNER - Juntar as informações da tabela clientes, saldo e idade
+SELECT
+	A.cpf,
+	A.nome,
+	B.saldo,
+	C.idade
+FROM
+	clientes as A
+INNER JOIN
+	saldo as B
+ON
+	A.cpf = B.cpf
+INNER JOIN
+	idade as C
+ON
+	A.cpf = C.cpf;
