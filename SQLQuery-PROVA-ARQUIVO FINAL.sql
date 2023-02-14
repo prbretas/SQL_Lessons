@@ -3,7 +3,15 @@ CREATE DATABASE projeto_final;
 use projeto_final
 
 use master ;
----------------------------- TABELA ALUNO --------------------------
+
+--VER TODAS AS TABELAS DO BANCO DE DADOS
+SELECT * FROM information_schema.tables;
+
+
+----------------------------------- TABELA ALUNO ----------------------------------------------------------
+SELECT * FROM ALUNO
+DROP TABLE ALUNO
+
 CREATE TABLE ALUNO(
 cpf varchar(11) not null,  --primary key
 nome varchar(50)  not null,
@@ -16,10 +24,7 @@ dt_nasc date not null,
 primary key(cpf)
 );
 
---------------------------------------------------------------------------------------------------------------------
 A. ALUNO(CPF, NOME, ENDERECO, TELEFONE, DATA_NASC)
-SELECT * FROM ALUNO
-DROP TABLE ALUNO
 
 INSERT INTO ALUNO
 VALUES ('05020555555', 'Bianca Maria dos Santos', '0206 Sanford Ford', '+55-61-94444-3311', '1993/03/04'),
