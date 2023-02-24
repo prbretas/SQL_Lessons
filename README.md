@@ -1,5 +1,8 @@
 # SQL_Lessons
-MS SQL lessons - START&lt;tech>
+SQL Lessons - START&lt;tech>
+<br>
+- MSSQLServer
+- MySQL
 
 
 <img src="SQL-Joins.jpg" width = "550px" height= "400px">
